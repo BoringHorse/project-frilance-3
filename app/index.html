@@ -4,33 +4,68 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
 	<title>Мир Ванных Комнат Уфа</title>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/menu.js"></script>
 </head>
 <body>
-	<aside class="left-column">
+	<aside class="left-column-wrapper">
+		<div class="left-column">
 	
-		<img src="img/logo.png" alt="логотип" class="left-column__logo">
-		<ul class="left-column__menu">
-			<a href="#" class="left-column__menu__link left-column__menu__link_state_active"><li class="left-column__menu__link__item">Главная</li></a>
-			<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">О компании</li></a>
-			<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Услуги</li></a>
-			<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Сотрудники</li></a>
-			<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Контакты</li></a>
-		</ul>
-		<!-- /.menu -->
+			<img src="img/logo.gif" alt="логотип" class="left-column__logo">
+			
+			<div class="left-column__menu-wrapper">
+				<ul class="left-column__menu">
+					<a href="#" class="left-column__menu__link left-column__menu__link_state_active"><li class="left-column__menu__link__item">Главная</li></a>
+					<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">О компании</li></a>
+					<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Услуги</li></a>
+					<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Сотрудники</li></a>
+					<a href="#" class="left-column__menu__link"><li class="left-column__menu__link__item">Контакты</li></a>
+				</ul>
+			<!-- /.menu -->
+			</div>
+			<!-- /.menu-wrapper -->
+
+			<div class="toggle-menu">
+				<span class="toggle-menu__burger-btn">
+					<span class="toggle-menu__burger-btn__stick"></span>
+					<span class="toggle-menu__burger-btn__stick"></span>
+				</span>
+				<nav class="toggle-menu__menu-wrapper">
+					<ul class="toggle-menu__menu-wrapper__menu">
+						<li class="toggle-menu__menu-wrapper__menu__item" id="#header"><a href="#" class="toggle-menu__menu-wrapper__menu__link">Главная</a></li>
+						<li class="toggle-menu__menu-wrapper__menu__item" id="#about"><a href="#" class="toggle-menu__menu-wrapper__menu__link">О компании</a></li>
+						<li class="toggle-menu__menu-wrapper__menu__item"><a href="#" class="toggle-menu__menu-wrapper__menu__link">Услуги</a></li>
+						<li class="toggle-menu__menu-wrapper__menu__item"><a href="#" class="toggle-menu__menu-wrapper__menu__link">Сотрудники</a></li>
+						<li class="toggle-menu__menu-wrapper__menu__item"><a href="#" class="toggle-menu__menu-wrapper__menu__link">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="contacts-wrapper">
+				<span class="contacts-wrapper__elem contacts-wrapper__phone"><b>Тел:</b><br> (347) 2922-633</span><br>
+				<span class="contacts-wrapper__elem contacts-wrapper__email"><b>E-mail:</b><br>mirvk2@yandex.ru </span><br>
+				<span class="contacts-wrapper__elem contacts-wrapper__place-map"><b>Адрес:</b><br>Уфа, Проспект Октября 1/2</span><br>
+			</div>
+
+		</div>
+		<!-- /.left-column -->
 	
 	</aside>
-	<!-- /.left-column -->
+	<!-- /.left-column-wrapper -->
 	<main class="right-column">
 		
 		<header class="header">
-			<h2 class="header__title">Преобразуем ванные с любовью</h2>
-			<p class="header__description">После нас Ваши ванные комнаты начнут заново дышать!</p>
+			<h2 class="header__title">Lorem ipsum dolor sit..</h2>
+			<p class="header__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quam.!</p>
 			<a href="" class="header__link-more"><button class="header__link-more__btn">Подробнее</button></a>
 		</header>
 		<!-- /.header -->	
+
+		<section class="about">
+			
+		</section>
 	
 	</main>
 	<!-- /.right-column -->
