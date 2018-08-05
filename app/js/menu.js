@@ -7,10 +7,13 @@ $(document).ready(function() {
 
 		if(scroll < ($('.about').offset().top)/2) {
 			toActivate(menuItem, 0);
-		} else if(scroll >= ($('.about').offset().top)/2) {
+		} 
+		if(scroll >= ($('.about').offset().top)/2) {
 			toActivate(menuItem, 1);
+		} 
+		if(scroll >= ($('.services').offset().top)/2) {
+			toActivate(menuItem, 2);
 		}
-
 	});
 
 	menuItem.on('click', function(e) {
