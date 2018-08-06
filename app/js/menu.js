@@ -11,8 +11,11 @@ $(document).ready(function() {
 		if(scroll >= ($('.about').offset().top)/2) {
 			toActivate(menuItem, 1);
 		} 
-		if(scroll >= ($('.services').offset().top)/2) {
+		if(scroll >= ($('.services').offset().top)/1.2) {
 			toActivate(menuItem, 2);
+		}
+		if(scroll >= ($('.staff').offset().top)/1.2) {
+			toActivate(menuItem, 3)
 		}
 	});
 
