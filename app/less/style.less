@@ -2,17 +2,17 @@
 @import 'mixins.less';
 
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css?family=Exo+2|Montserrat|Open+Sans+Condensed:300|Play');
-@import url('https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro');
+
 /* ___________ */
+
+@c_green: rgb(60, 210, 190);
 
 
 body {
-	//transform: scale(.5);
+	font-family: 'Montserrat', sans-serif;
 	width: 100%;
-	//font-family: "Open Sans Condensed", sans-serif;
 	.flex-cont(row, nowrap, stretch, flex-start);
-	overflow-x: hidden;
+	//overflow-x: hidden;
 	transition: .8s ease;
 
 	@media screen and (max-width: 1025px) {
@@ -24,35 +24,41 @@ body {
 	position: absolute;
 	display: block;
 	.flex-cont(column, nowrap, space-between, center);
-	width: 250px;
+	width: 220px;
 	height: 100vh;
-	padding: 1.8rem;
-	background: rgb(242,239,230);
+	//padding: 1.8rem;
+	//background: rgb(242,239,230);
+	background: @c_green;
 	z-index: 500;
 
 	&__logo {
 		width: 100%;
 		height: auto;
-		outline: 3px solid rgb(249, 239, 239);
+		background: white;
+		outline: 3px solid white;
 		outline-offset: -3px;
 	}
 
 	&__menu {
+		width: 100%;
+		position: relative;
 		list-style: none;
 		.flex-cont(column, nowrap, center, center);
 
 		&__link {
-			font-family: "Open Sans Condensed";
 			position: relative;
 			display: block;
 			width: 100%;
+			word-break: break-all;
 			text-align: center;
 			text-decoration: none;
-			color: rgb(70, 70, 70);
+			//color: rgb(70, 70, 70);
+			color: white;
 			font-size: 130%;
 			margin: .5rem 0;
 			transition-property: color;
 			transition-duration: .1s;
+			user-select: none;
 
 			&__item {
 				padding: .4rem;
@@ -65,11 +71,10 @@ body {
 			&_state_active {
 				display: block;
 				position: relative;
-				left: 72.5%;
-				//background: rgb(130, 180, 240);
-				background-image: linear-gradient(to top right, rgb(140, 210, 190), rgb(40, 210, 190));
-				//color: rgb(80, 80, 80);
-				color: white;
+				left: 3.5rem;
+				//background-image: linear-gradient(to top right, rgb(140, 210, 190), rgb(40, 210, 190));
+				background: white;
+				color: rgb(70, 210, 190);
 
 
 				.left-column__menu__link__item {
@@ -85,7 +90,7 @@ body {
 						transform: translate(0, 100%);
 						width: 1em;
 						height: 1em;
-						background-image: linear-gradient(to bottom right, rgb(10, 180, 160) 50%, transparent 0);
+						background-image: linear-gradient(to bottom right, rgb(240, 240, 240) 50%, transparent 0);
 					}
 
 				}
@@ -93,8 +98,6 @@ body {
 			}
 
 			&:not(.left-column__menu__link_state_active):hover {				
-				outline: 1px solid rgb(10, 180, 160);
-				outline-offset: -1px;
 				color: rgb(10, 120, 100);
 			}
 
@@ -107,24 +110,29 @@ body {
 	}
 
 	.contacts-wrapper {
-		width: 100%;
+		width: 50%;
+		font-size: .8rem;
 
 		&__elem {
-			text-align: center;
+			text-align: left;
 			position: relative;
 			display: block;
 			word-break: break-all;
+			color: rgb(20, 20, 20);
 		}
 
 		&__place-map::before {
+			display: block;
 			content: '🚩';
 		}
 
 		&__phone::before{
+			display: block;
 			content: '📞';
 		}
 
 		&__email::before {
+			display: block;
 			content: '📧';
 		}
 
@@ -284,102 +292,135 @@ body {
 .right-column {
 	display: block;
 	width: 92%;
-	margin-left: 250px;
+	margin-left: 220px;
 
 	.header {
-		.flex-cont(column, nowrap, center, center);
-		background-image: linear-gradient(rgba(50, 70, 90, .7), rgba(50, 70, 90, .7)) ,url('../img/background-header.jpg');
+		font-family: 'Open Sans', sans-serif;
+		.flex-cont(column, nowrap, center, flex-end);
+		background-image: linear-gradient(rgba(40, 60, 80, .85), rgba(30, 60, 80, .85)) ,url('../img/background-header.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100vh;
 
 		&__title {
-			text-align: center;
-			letter-spacing: .15rem;
-			font-size: 260%;
+			width: 50%;
+			text-align: right;
+			line-height: 1.2em;
+			letter-spacing: .5rem;
+			font-weight: bold;
+			font-size: 380%;
 			color: rgb(245, 245, 250);
 
 		} /* End __title */
 
 		&__description {
-			text-align: center;
-			max-width: 30em;
-			font-size: 1.3rem;
+			display: block;
+			text-align: right;
+			max-width: 50%;
+			line-height: 1.7rem;
+			font-size: 1rem;
 			margin: 1rem 0 3rem 0;
-			letter-spacing: .1rem;
-			color: rgb(190, 190, 190)
+			letter-spacing: .15rem;
+			color: @c_green
 		} /* End __description */
 
+		& > * {
+			margin-right: 10%;
+		}
+
 		&__link-more {
+			position: relative;
 			width: auto;
 			cursor: pointer;
+			margin-top: 2rem;
 
 			&__btn {
-				padding: .7rem 3rem;
-				font-size: 1.2rem;
-				color: rgb(80, 50, 50);
+				padding: .7rem 2.3rem;
+				font-size: 1.4rem;
+				border: .1em solid @c_green;
+				background: transparent;
 				color: white;
-				background-image: linear-gradient(to top right, rgb(240, 210, 190), rgb(40, 210, 190));
-				border-radius: 1rem;
 
 			} /* End __btn */
+
+			&__btn:hover {
+				background: @c_green;
+			}
 
 		} /* End __link-more */
 
 	} /* End .header */
 
 	.about {
-		//position: relative;
+		font-family: 'Lora', serif;
 		.flex-cont(column, nowrap, space-between, center);
 		width: 100%;
 		box-sizing: border-box;
-		padding: 4rem 2rem;
-		background: white;
+		padding: 0 2rem 4rem 2rem;
+		background: rgb(250, 250, 250);
 		z-index: 10;
 
 		&__title {
-			font-family: "Open Sans Condensed";
 			position: relative;
-			font-size: 2.4rem;
+			font-size: 1.5rem;
 			letter-spacing: .2rem;
-			color: rgb(80, 80, 80);
+			color: rgb(250, 250, 250);
+			background: @c_green;
+			padding: 2rem 4rem;
 			//z-index: 21;
 
-			&::after {
+			/* 			&::after {
 				content: '';
 				position: absolute;
 				width: 60%;
 				height: .2rem;
-				background: rgb(80, 80, 80);
+				background: rgb(80, 220, 190);
 				bottom: -10%;
 				left: 50%;
 				transform: translate(-50%, 100%);
-			}
+				 */
 
 		} /* End __title */
 
 		&__info-cont {
 			width: 100%;
-			margin-top: 10rem;
-			.flex-cont(row, wrap, space-around, flex-start);
+			margin-top: 7rem;
+			.flex-cont(row, wrap, space-around, stretch);
+			align-content: stretch;
 
 			&__left-column {
 				width: 50%;
-				font-size: 1.1rem;
-				letter-spacing: .2rem;
+				font-size: 1rem;
 				line-height: 1.7em;
 				color: rgb(80, 80, 80);
 
 				&__title {
-					font-size: 1.7em;
-					margin: 0 0 1.4rem 0;
+					display: inline-block;
+					position: relative;
+					font-size: 1.4em;
+					margin: 3rem 0 1.4rem 0;
 				} /* End __title */
+
+				&__title:first-of-type {
+					margin: 0 0 1.4rem 0;
+				}
+
+				&__title::after {
+					content: '';
+					position: absolute;
+					bottom: -20%;
+					left: 0;
+					transform: translate(0, 100%);
+					width: 30%;
+					height: .1rem;
+					background: rgb(70, 70, 70);
+				}
 
 			} /* End __left-column */
 
 			&__right-column {
 				width: 35%;
-				height: 450px;
+				height: auto;
 				background-image: linear-gradient(rgba(50, 70, 90, .5), rgba(50, 70, 90, .5)) ,url('../img/image-about.jpg');
 				background-position: 100% 0;
 				//background-blend-mode: multiply;
@@ -404,30 +445,33 @@ body {
 				&__left-column {
 					order: 1;
 				}
+
+				&__right-column {
+					height: 450px;
+				}
 			}
 		}
 
 	} /* End .about */
 
 	.advantage {
-		padding: 5rem 3rem;
-		font-size: 2.7rem;
-		letter-spacing: .1rem;
-		line-height: 2rem;
 		width: 100%;
-		background: rgb(40, 210, 190);
-		color: white;
+		padding: 3rem;
+		font-size: 2rem;
 		text-align: center;
+		background: white;
+		color: @c_green;
 	} /* End .advantage */
 
 	.services {
 		background: rgb(245, 245, 245);
+		padding: 0 2rem;
 		
 		&__time-line {
 			position: relative;
-			margin-top: 8rem;
+			margin: 8rem 0;
 			.flex-cont(column, nowrap, flex-start, flex-start);
-			width: 80%;
+			width: 90%;
 			max-width: 970px;
 
 			&::after {
@@ -453,7 +497,7 @@ body {
 					word-break: break-all;
 					text-transform: uppercase;
 					font-size: 1.2rem;
-					color: rgb(90, 90, 90);
+					color: @c_green;
 				}
 
 				&__decription {
@@ -520,6 +564,7 @@ body {
 			@media all and (max-width: 661px) {
 				width: 100%;
 				&__marker-cont {
+					width: 50%;
 					padding: 1.4rem;
 				}
 			}
@@ -531,6 +576,7 @@ body {
 	.staff {
 		width: 100%;
 		overflow: hidden;
+		background: white;
 		padding-bottom: 0;
 
 		.slider-viewport {
@@ -583,7 +629,7 @@ body {
 				&__slide {
 					position: relative;
 					.flex-cont(column, nowrap, space-between, center);
-					width: 400px;
+					width: 410px;
 					height: auto;
 					padding: 1em;
 					background-image: linear-gradient(to bottom, rgb(40, 210, 190) 25%, transparent 0);
