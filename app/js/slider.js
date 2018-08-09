@@ -6,17 +6,18 @@ $(document).ready(function() {
 		pos = 0,
 		count = 3;
 
-	$(window).on('resize', function() {
-		if(window.innerWidth <= 840) {
-			count = 1;
-		}
-		else if(window.innerWidth <= 1510) {
-			count = 2;
-		} else {
-			count = 3;
-		}
-		viewport.css('width', offset*count);
-	});
+		/*$(window).on('resize', function() {
+			if(window.innerWidth <= 840) {
+				count = 1;
+			}
+			else if(window.innerWidth <= 1510) {
+				count = 2;
+			} else {
+				count = 3;
+			}
+		});
+	
+	viewport.css('width', offset*count);*/
 
 	viewport.find('span').on('click', function() {
 		switch($(this).index()) {
